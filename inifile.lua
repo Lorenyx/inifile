@@ -43,9 +43,9 @@ local backends = {
 		write = function(name, contents) return contents end,
 	},
 	fs = {
-		lines = function(name) return assert(fs.open(name)):lines() end,
+		lines = function(name) return assert(io.lines(name)) end,
 		write = function(name, contents) assert(fs.open(name, "w")):write(contents) end,
-	}
+	},
 }
 
 if love then
