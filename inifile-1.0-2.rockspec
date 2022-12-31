@@ -2,9 +2,9 @@ package = "inifile"
 version = "1.0-2"
 
 source = {
-	url = "git://github.com/bartbes/inifile.git",
+	url = "git://github.com/lorenyx/inifile.git",
 	dir = "inifile",
-	tag = "v1.0",
+	tag = "v1.1",
 }
 
 description = {

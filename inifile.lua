@@ -1,5 +1,5 @@
 local inifile = {
-	_VERSION = "inifile 1.0",
+	_VERSION = "inifile 1.1",
 	_DESCRIPTION = "Inifile is a simple, complete ini parser for lua",
 	_URL = "http://docs.bartbes.com/inifile",
 	_LICENSE = [[
@@ -42,6 +42,10 @@ local backends = {
 		lines = function(text) return text:gmatch("([^\r\n]+)\r?\n") end,
 		write = function(name, contents) return contents end,
 	},
+	fs = {
+		lines = function(name) return assert(fs.open(name)):lines() end,
+		write = function(name, contents) assert(fs.open(name, "w")):write(contents) end,
+	}
 }
 
 if love then
